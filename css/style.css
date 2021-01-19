@@ -1,0 +1,37 @@
+nav {
+    margin-bottom: 1em;
+}
+div#main {
+    text-align: center;
+    color: #455a64;
+}
+div.resin__amount {
+    font-size: 1.6em;
+}
+div.resin__amount > span {
+    margin: 0.2em;
+}
+span#resin__amount--current {
+    font-size: 2.4em;
+    color: #1976d2;
+}
+div.resin__update > .btn-floating {
+    margin-left: 0.4em;
+}
+ul.boss {
+    text-align: left;
+    color: #546e7a;
+}
+ul.boss span.title {
+    font-size: 0.8em;
+}
+ul.boss div.targetdate {
+    font-size: 2em;
+    line-height: 1.2em;
+}
+.page-footer {
+    border-top: solid 1pt #2196f3;
+    color: #455a64;
+    padding-top: 0.2em;
+    margin-top: 4em;
+}

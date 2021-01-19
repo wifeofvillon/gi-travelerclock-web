@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>        
+</head>
+<body>
+    <!-- nav -->
+    <nav>
+        <div class="nav-wrapper blue darken-2">
+            <a class="brand-logo">GI Travelers clock</a>
+        </div>
+    </nav>
+    <!-- main -->
+    <div class="container" id="main">
+        <div class="resin">
+            <div><i class="material-icons large blue-text text-lighten-4">nights_stay</i></div>
+            <div class="progress blue lighten-4">
+                <div class="determinate blue" style="width: 0%" id="resin__percent"></div>
+            </div>
+            <div class="resin__amount">
+                <span id="resin__amount--current">0</span>/<span id="resin__amount--max">0</span>
+            </div>
+            <div class="resin__date">
+                <p>Original Resins will reach to max at <span class="blue lighten-5" id="resin__date--max">1970/01/01 0:00</span></p>
+                <p>
+                    Last update: <span class="blue lighten-5" id="resin__date--update">1970/01/01 0:00</span>
+                    <a class="btn-floating waves-effect waves-light blue darken-2 modal-trigger" href="#modal__update"><i class="material-icons right">create</i>update</a>
+                </p>
+            </div>
+        </div>
+
+        <ul class="collection boss">
+            <!-- weekly bosses -->
+            <li class="collection-item avatar">
+                <i class="large material-icons circle deep-purple darken-2">person_pin</i>
+                <span class="title deep-purple-text text-darken-2">Weekly Bosses (<span class="amount" id="boss__weeklyboss--amount">0</span>)</span>
+                <div class="targetdate" id="boss__weeklyboss--date">0:00</div>
+            </li>
+            <!-- normal bosses -->
+            <li class="collection-item avatar">
+                <i class="large material-icons circle blue darken-2">location_on</i>
+                <span class="title blue-text text-darken-2">Normal Bosses (<span class="amount" id="boss__normalboss--amount">0</span>)</span>
+                <div class="targetdate" id="boss__normalboss--date">0:00</div>
+            </li>
+            <!-- domains and ley line outcrops -->
+            <li class="collection-item avatar">
+                <i class="large material-icons circle cyan darken-2">my_location</i>
+                <span class="title cyan-text text-darken-2">Domains and Ley Line Outcrops (<span class="amount" id="boss__domain--amount">0</span>)</span>
+                <div class="targetdate" id="boss__domain--date">0:00</div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal__update" class="modal">
+        <div class="modal-content">
+            <div class="input-field">
+                <input id="modal__update--input" type="number" class="validate">
+                <label for="modal__update--input">Current Resins</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a class="modal-close btn-flat waves-effect waves-light"><i class="material-icons right">cancel</i>cancel</a>
+            <a class="modal-close btn-flat waves-effect waves-light" onclick="update();"><i class="material-icons right">create</i>update</a>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="page-footer white">
+        <div class="container center">
+            <div class="row">
+                <p>managed by @wifefvillon</p>
+                <p>
+                    <a class="github-button" href="https://github.com/wifeofvillon" data-style="mega" data-count-href="/wifeofvillon/followers" data-count-api="/users/wifeofvillon#followers">Follow @wifeofvillon</a>
+                    <a href="https://twitter.com/wifeofvillon" class="twitter-follow-button" data-show-count="false">Follow @wifeofvillon</a>
+                    <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./js/index.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems);
+        });
+        init();
+    </script>
+</body>
+</html>
