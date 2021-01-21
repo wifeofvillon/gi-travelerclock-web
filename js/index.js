@@ -41,7 +41,9 @@ let getTimeToTargetAmount = (current, target) => {
 let updateCookie = (amount) => {
     setCookieByKeyValue(cookieKey.resin, amount);
     setCookieByKeyValue(cookieKey.date, Date.now());
-    console.log(`resin:${getCookieByKey(cookieKey.resin)} date:${getCookieByKey(cookieKey.date)}`);
+    let expires = new Date(Date.now() + (7 * 24 * 60 * 60 * 1000)).toUTCString();
+    setCookieByKeyValue("expires", expires);
+    console.log(document.cookie);
 };
 
 // get date for each bosses
