@@ -43,6 +43,7 @@ let updateCookie = (amount) => {
     setCookieByKeyValue(cookieKey.date, Date.now());
     let expires = new Date(Date.now() + (7 * 24 * 60 * 60 * 1000)).toUTCString();
     setCookieByKeyValue("expires", expires);
+    setCookieByKeyValue("Max-Age", 7 * 24 * 60 * 60);
     console.log(document.cookie);
 };
 
