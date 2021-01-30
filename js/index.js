@@ -92,8 +92,9 @@ let renderResinAmount = () => {
 let renderMaxDate = () => {
     let date = new Date(Number(getCookieByKey(cookieKey.date)));
     let maxDate = new Date(date.getTime() + specificData.resin.max - Number(getCookieByKey(cookieKey.resin)) * specificData.resin.ms);
-    document.getElementById('resin__date--max').innerText = maxDate.toLocaleString();
-    document.getElementsByClassName('twitter-share-button')[0].setAttribute('data-text', `Original Resin will reach to the maximum around ${maxDate.toLocaleString()}`);
+    let localStringShort = maxDate.toLocaleString().replace(/\:\d{2}$/, "");
+    document.getElementById('resin__date--max').innerText = localStringShort;
+    document.getElementsByClassName('twitter-share-button')[0].setAttribute('data-text', `Original Resin will reach to the maximum around ${localStringShort}`);
 }
 
 // render last update
