@@ -37,6 +37,14 @@ let getTimeToTargetAmount = (current, target) => {
     }
 };
 
+// check cookie
+let checkCookie = () => {
+    if (!getCookieByKey(cookieKey.date) || !getCookieByKey(cookieKey.resin)) {
+        let message = "Cookie Error";
+        M.toast({html: message});
+    }
+};
+
 // set current amount and time
 let updateCookie = (amount) => {
     setCookieByKeyValue(cookieKey.resin, amount);
@@ -113,6 +121,7 @@ let renderTargetDates = () => {
 
 // execute initially
 let init = () => {
+    checkCookie();
     renderSpecificValues();
     renderResinAmount();
     renderMaxDate();
